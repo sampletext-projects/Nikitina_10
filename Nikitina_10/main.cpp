@@ -5,59 +5,58 @@ using namespace std;
 
 string to_string(int number)
 {
-	if (number <= 0) return "Не поддерживаемое число.";
-	if (number > 100) return "Не поддерживаемое число.";
+	if (number <= 0) return "РќРµ РїРѕРґРґРµСЂР¶РёРІР°РµРјРѕРµ С‡РёСЃР»Рѕ.";
+	if (number > 100) return "РќРµ РїРѕРґРґРµСЂР¶РёРІР°РµРјРѕРµ С‡РёСЃР»Рѕ.";
 
 	if (number < 10)
 	{
 		switch (number)
 		{
-		case 1: return "Один";
-		case 2: return "Два";
-		case 3: return "Три";
-		case 4: return "Четыре";
-		case 5: return "Пять";
-		case 6: return "Шесть";
-		case 7: return "Семь";
-		case 8: return "Восемь";
-		case 9: return "Девять";
+		case 1: return "РћРґРёРЅ";
+		case 2: return "Р”РІР°";
+		case 3: return "РўСЂРё";
+		case 4: return "Р§РµС‚С‹СЂРµ";
+		case 5: return "РџСЏС‚СЊ";
+		case 6: return "РЁРµСЃС‚СЊ";
+		case 7: return "РЎРµРјСЊ";
+		case 8: return "Р’РѕСЃРµРјСЊ";
+		case 9: return "Р”РµРІСЏС‚СЊ";
 		}
 	}
-	else if (number % 10 == 0) //все кратные 10
+	else if (number % 10 == 0) //РІСЃРµ РєСЂР°С‚РЅС‹Рµ 10
 	{
 		switch (number / 10)
 		{
-		case 1: return "Десять";
-		case 2: return "Двадцать";
-		case 3: return "Тридцать";
-		case 4: return "Сорок";
-		case 5: return "Пятдесят";
-		case 6: return "Шестьдесят";
-		case 7: return "Семьдесят";
-		case 8: return "Восемьдесят";
-		case 9: return "Девяносто";
+		case 1: return "Р”РµСЃСЏС‚СЊ";
+		case 2: return "Р”РІР°РґС†Р°С‚СЊ";
+		case 3: return "РўСЂРёРґС†Р°С‚СЊ";
+		case 4: return "РЎРѕСЂРѕРє";
+		case 5: return "РџСЏС‚РґРµСЃСЏС‚";
+		case 6: return "РЁРµСЃС‚СЊРґРµСЃСЏС‚";
+		case 7: return "РЎРµРјСЊРґРµСЃСЏС‚";
+		case 8: return "Р’РѕСЃРµРјСЊРґРµСЃСЏС‚";
+		case 9: return "Р”РµРІСЏРЅРѕСЃС‚Рѕ";
 		}
 	}
 	else if (number > 10 && number < 20)
 	{
-
 		switch (number % 10)
 		{
-		case 1: return "Одиннадцать";
-		case 2: return "Двенадцать";
-		case 3: return "Тринадцать";
-		case 4: return "Четырнадцать";
-		case 5: return "Пятнадцать";
-		case 6: return "Шестнадцать";
-		case 7: return "Семнадцать";
-		case 8: return "Восемнадцать";
-		case 9: return "Девятнадцать";
+		case 1: return "РћРґРёРЅРЅР°РґС†Р°С‚СЊ";
+		case 2: return "Р”РІРµРЅР°РґС†Р°С‚СЊ";
+		case 3: return "РўСЂРёРЅР°РґС†Р°С‚СЊ";
+		case 4: return "Р§РµС‚С‹СЂРЅР°РґС†Р°С‚СЊ";
+		case 5: return "РџСЏС‚РЅР°РґС†Р°С‚СЊ";
+		case 6: return "РЁРµСЃС‚РЅР°РґС†Р°С‚СЊ";
+		case 7: return "РЎРµРјРЅР°РґС†Р°С‚СЊ";
+		case 8: return "Р’РѕСЃРµРјРЅР°РґС†Р°С‚СЊ";
+		case 9: return "Р”РµРІСЏС‚РЅР°РґС†Р°С‚СЊ";
 		}
 	}
-	else //все не особые случаи
+	else //РІСЃРµ РЅРµ РѕСЃРѕР±С‹Рµ СЃР»СѓС‡Р°Рё
 	{
-		//конвертируем десятки и единицы рекурсивным вызовом, т.к. их обработка произведена до текущего else
-		// деление на 10 и умножение на 10 позволяет отсечь десятки
+		//РєРѕРЅРІРµСЂС‚РёСЂСѓРµРј РґРµСЃСЏС‚РєРё Рё РµРґРёРЅРёС†С‹ СЂРµРєСѓСЂСЃРёРІРЅС‹Рј РІС‹Р·РѕРІРѕРј, С‚.Рє. РёС… РѕР±СЂР°Р±РѕС‚РєР° РїСЂРѕРёР·РІРµРґРµРЅР° РґРѕ С‚РµРєСѓС‰РµРіРѕ else
+		// РґРµР»РµРЅРёРµ РЅР° 10 Рё СѓРјРЅРѕР¶РµРЅРёРµ РЅР° 10 РїРѕР·РІРѕР»СЏРµС‚ РѕС‚СЃРµС‡СЊ РґРµСЃСЏС‚РєРё
 		return to_string(number / 10 * 10) + " " + to_string(number % 10);
 	}
 }
@@ -66,7 +65,7 @@ int main()
 {
 	setlocale(LC_ALL, "russian");
 	srand(time(0));
-	cout << "Автор: Никитина Дарья Сергеевна\n";
+	cout << "РђРІС‚РѕСЂ: РќРёРєРёС‚РёРЅР° Р”Р°СЂСЊСЏ РЎРµСЂРіРµРµРІРЅР°\n";
 
 	for (int i = 0; i < 100; ++i)
 	{
